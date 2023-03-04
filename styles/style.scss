@@ -1,0 +1,89 @@
+@import "_variables.scss";
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Rubik", sans-serif;
+  background-color: $bg-color;
+}
+
+.container {
+  padding: 3rem 2rem;
+}
+
+.card {
+  background-color: $card-color;
+  border-radius: 20px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+
+  .dashboard {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: $card-color;
+
+    .dashboard-container {
+      background-color: $dashboard-color;
+      border-radius: 14px;
+
+      img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        outline: 3px solid $white;
+      }
+
+      .dashboard-subtext {
+        margin-top: 4rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $text-color;
+      }
+
+      .dashboard-username {
+        margin-top: 0.5rem;
+        width: 8ch;
+        font-size: 3.8rem;
+        font-weight: 300;
+        color: $white;
+        line-height: 1.3;
+      }
+    }
+    .dashboard-timeframe-wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.8rem;
+      background-color: $card-color;
+      border-radius: 0 0 14px 14px;
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+  .card-work {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .card-play {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .card-study {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  .card-exercise {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .card-social {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .card-selfcare {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+}
