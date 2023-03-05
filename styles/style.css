@@ -14,6 +14,21 @@ body {
   border-radius: 20px;
 }
 
+.card-title {
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+
+.previous {
+  color: hsl(0, 0%, 100%);
+  font-size: 2.5rem;
+}
+
+.current {
+  color: hsl(0, 0%, 100%);
+  font-size: 3rem;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
