@@ -16,25 +16,26 @@ function resetCard() {
 
 function renderTimeframe(timeframe) {
   resetCard();
-  for (const card of [...cards]) {
+  data.default.forEach((item, index) => {
     const {
-      title = "self-care",
+      title,
       timeframes: {
         [timeframe]: { current, previous },
       },
-    } = data.default[[...cards].indexOf(card)];
+    } = item;
+    const card = cards[index];
     card.insertAdjacentHTML(
       "afterbegin",
       `
         <img src="./images/icon-${title
           .toLowerCase()
-          .replace(" ", "-")}.svg" alt="${title} icon" class="card-icon" />
-        <h3 class="card-title">${title}</h3>
-        <p class="card-play-current current">${current}</p>
-        <p class="card-play-previous previous">${previous}</p>
-      `
+          .replaceAll(" ", "-")}.svg" alt="play icon" class="card-icon" />
+          <h3 class="card-title">${title}</h3>
+          <p class="card-play-current current">${current}</p>
+          <p class="card-play-previous previous">${previous}</p>
+          `
     );
-  }
+  });
 }
 
 renderTimeframe("daily");
