@@ -13,6 +13,10 @@ body {
   background-color: hsl(235, 46%, 20%);
   border-radius: 20px;
 }
+.card img {
+  width: 8rem;
+  height: 8rem;
+}
 
 .card-title {
   color: hsl(0, 0%, 100%);
@@ -38,7 +42,7 @@ body {
 }
 .main-container .dashboard {
   grid-area: 1/1/3/2;
-  background-color: hsl(235, 46%, 20%);
+  background-color: transparent;
 }
 .main-container .dashboard .dashboard-container {
   background-color: hsl(246, 80%, 60%);

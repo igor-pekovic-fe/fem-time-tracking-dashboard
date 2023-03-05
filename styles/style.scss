@@ -14,6 +14,11 @@ body {
 .card {
   background-color: $card-color;
   border-radius: 20px;
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 
 .card-title {
@@ -40,7 +45,7 @@ body {
 
   .dashboard {
     grid-area: 1 / 1 / 3 / 2;
-    background-color: $card-color;
+    background-color: transparent;
 
     .dashboard-container {
       background-color: $dashboard-color;
