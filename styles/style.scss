@@ -1,5 +1,6 @@
 @import "_variables.scss";
 
+// General styling
 body {
   display: grid;
   place-items: center;
@@ -7,74 +8,58 @@ body {
   background-color: $bg-color;
 }
 
+// Helper classes
 .container {
   padding: 3rem 2rem;
 }
 
-.card {
-  background-color: $card-color;
-  border-radius: 20px;
+.flex {
+  display: flex;
+}
 
-  img {
-    width: 8rem;
-    height: 8rem;
+// Main styling
+.main {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
   }
-}
-
-.card-title {
-  color: $white;
-  font-size: 2rem;
-}
-
-.previous {
-  color: $white;
-  font-size: 2.5rem;
-}
-
-.current {
-  color: $white;
-  font-size: 3rem;
-}
-
-.main-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 3rem;
-  grid-row-gap: 3rem;
 
   .dashboard {
     grid-area: 1 / 1 / 3 / 2;
     background-color: transparent;
 
-    .dashboard-container {
+    &__container {
       background-color: $dashboard-color;
       border-radius: 14px;
-
-      img {
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-        outline: 3px solid $white;
-      }
-
-      .dashboard-subtext {
-        margin-top: 4rem;
-        font-size: 1.4rem;
-        font-weight: 500;
-        color: $text-color;
-      }
-
-      .dashboard-username {
-        margin-top: 0.5rem;
-        width: 8ch;
-        font-size: 3.8rem;
-        font-weight: 300;
-        color: $white;
-        line-height: 1.3;
-      }
     }
-    .dashboard-timeframe-wrapper {
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      outline: 3px solid $white;
+    }
+
+    &__subtext {
+      margin-top: 4rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    &__username {
+      margin-top: 0.5rem;
+      width: 8ch;
+      font-size: 3.8rem;
+      font-weight: 300;
+      color: $white;
+      line-height: 1.3;
+    }
+
+    &__timeframe-wrapper {
       display: flex;
       flex-direction: column;
       font-size: 1.8rem;
@@ -88,22 +73,66 @@ body {
       }
     }
   }
-  .card-work {
+
+  .card {
+    background-color: $card-color;
+    border-radius: 20px;
+    padding: 1rem;
+
+    &__icon-container {
+      background: red;
+    }
+
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &__title-container {
+      align-items: center;
+
+      img {
+        height: 0.4rem;
+        width: 1.6rem;
+      }
+    }
+
+    &__title {
+      margin-right: auto;
+      color: $white;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    &__timeframe-previous {
+      color: $white;
+      font-size: 1.4rem;
+      color: $text-color;
+    }
+
+    &__timeframe-current {
+      color: $white;
+      font-size: 4rem;
+      font-weight: 300;
+    }
+  }
+
+  .card--work {
     grid-area: 1 / 2 / 2 / 3;
   }
-  .card-play {
+  .card--play {
     grid-area: 1 / 3 / 2 / 4;
   }
-  .card-study {
+  .card--study {
     grid-area: 1 / 4 / 2 / 5;
   }
-  .card-exercise {
+  .card--exercise {
     grid-area: 2 / 2 / 3 / 3;
   }
-  .card-social {
+  .card--social {
     grid-area: 2 / 3 / 3 / 4;
   }
-  .card-selfcare {
+  .card--selfcare {
     grid-area: 2 / 4 / 3 / 5;
   }
 }

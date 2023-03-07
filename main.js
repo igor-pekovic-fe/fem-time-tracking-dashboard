@@ -23,16 +23,39 @@ function renderTimeframe(timeframe) {
         [timeframe]: { current, previous },
       },
     } = item;
+
+    const timeframeStrings = {
+      daily: "Yesterday",
+      weekly: "Last week",
+      monthly: "Last month",
+    };
+
+    const timeframeString = timeframeStrings[timeframe];
+
     const card = cards[index];
     card.insertAdjacentHTML(
       "afterbegin",
       `
-        <img src="./images/icon-${title
-          .toLowerCase()
-          .replaceAll(" ", "-")}.svg" alt="play icon" class="card-icon" />
-          <h3 class="card-title">${title}</h3>
-          <p class="card-play-current current">${current}</p>
-          <p class="card-play-previous previous">${previous}</p>
+      <div class="card__container>
+        <div class="card__icon-container">
+          <img src="./images/icon-${title
+            .toLowerCase()
+            .replaceAll(
+              " ",
+              "-"
+            )}.svg" alt="${title.toLowerCase()} icon" class="card__icon" />
+        </div>
+        <div class="card__title-container flex">
+            <h3 class="card__title">${title}</h3>
+            <img class="icon-ellipsis" src="./images/icon-ellipsis.svg" />  
+        </div>
+            <p class="card__timeframe-current">${current}${
+        current == 1 ? "hr" : "hrs"
+      }</p>
+            <p class="card__timeframe-previous">${timeframeString} - ${previous}${
+        previous == 1 ? "hr" : "hrs"
+      }</p>
+      </div>
           `
     );
   });
