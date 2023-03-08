@@ -1,6 +1,6 @@
 import * as data from "./data.js";
 
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card__content");
 
 const dailyBtn = document.querySelector(".timeframe-daily");
 const weeklyBtn = document.querySelector(".timeframe-weekly");
@@ -34,17 +34,9 @@ function renderTimeframe(timeframe) {
 
     const card = cards[index];
     card.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `
       <div class="card__container>
-        <div class="card__icon-container">
-          <img src="./images/icon-${title
-            .toLowerCase()
-            .replaceAll(
-              " ",
-              "-"
-            )}.svg" alt="${title.toLowerCase()} icon" class="card__icon" />
-        </div>
         <div class="card__title-container flex">
             <h3 class="card__title">${title}</h3>
             <img class="icon-ellipsis" src="./images/icon-ellipsis.svg" />  

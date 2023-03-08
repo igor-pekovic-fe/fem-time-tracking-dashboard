@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_mixins.scss";
 
 // General styling
 body {
@@ -75,17 +76,19 @@ body {
   }
 
   .card {
-    background-color: $card-color;
     border-radius: 20px;
     padding: 1rem;
 
     &__icon-container {
-      background: red;
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
     }
 
-    img {
-      width: 3rem;
-      height: 3rem;
+    &__content {
+      height: 100%;
+      background-color: $card-color;
     }
 
     &__title-container {
@@ -117,22 +120,77 @@ body {
     }
   }
 
+  @mixin card($color, $image) {
+    background-color: $color;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../images/#{$image});
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: 25%;
+  }
+
   .card--work {
     grid-area: 1 / 2 / 2 / 3;
+
+    .card__icon-container--work {
+      @include card($work-color, "icon-work.svg");
+    }
   }
   .card--play {
     grid-area: 1 / 3 / 2 / 4;
+
+    .card__icon-container--play {
+      @include card($play-color, "icon-play.svg");
+    }
   }
   .card--study {
     grid-area: 1 / 4 / 2 / 5;
+
+    .card__icon-container--study {
+      @include card($study-color, "icon-study.svg");
+    }
   }
   .card--exercise {
     grid-area: 2 / 2 / 3 / 3;
+
+    .card__icon-container--exercise {
+      @include card($exercise-color, "icon-exercise.svg");
+    }
   }
   .card--social {
     grid-area: 2 / 3 / 3 / 4;
+
+    .card__icon-container--social {
+      @include card($social-color, "icon-social.svg");
+    }
   }
   .card--selfcare {
     grid-area: 2 / 4 / 3 / 5;
+
+    .card__icon-container--selfcare {
+      @include card($selfcare-color, "icon-self-care.svg");
+    }
   }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .main {
+    &__container {
+      display: block;
+    }
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
